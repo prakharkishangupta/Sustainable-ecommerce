@@ -31,13 +31,15 @@ const Shop = () => {
       if (data.error) {
         setError(data.error);
       } else {
+        console.log("my product shop");
         setCategories(data);
+        console.log(categories)
       }
     });
   };
 
   const loadFilteredResults = (newFilters) => {
-    // console.log(newFilters);
+    console.log("jjjjj",newFilters);
     getFilteredProducts(skip, limit, newFilters).then((data) => {
       if (data.error) {
         setError(data.error);
@@ -97,7 +99,7 @@ const Shop = () => {
   }, []);
 
   const handleFilters = (filters, filterBy) => {
-    // console.log("SHOP", filters, filterBy);
+    console.log("SHOP", filters, filterBy);
     const newFilters = { ...myFilters };
     newFilters.filters[filterBy] = filters;
 
